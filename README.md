@@ -2,10 +2,10 @@
 <p align="center">
 <p align="center">
   <a href="" target="_blank"><img src="https://img.shields.io/badge/weChat-微信群-blue.svg" alt="微信群"></a>
-  <a href="https://img-blog.csdnimg.cn/20201222174505289.jpg" target="_blank"><img src="https://img.shields.io/badge/%E5%85%AC%E4%BC%97%E5%8F%B7-Jack%20Cui-lightgrey.svg" alt="公众号"></a>
+  <a href="https://img-blog.csdnimg.cn/20201222174505289.jpg" target="_blank"><img src="https://img.shields.io/badge/%E5%85%AC%E4%BC%97%E5%8F%B7-IT无知君-green.svg" alt="公众号"></a>
   <a href="https://space.bilibili.com/616743906"><img src="https://img.shields.io/badge/bilibili-哔哩哔哩-critical" alt="B站"></a>
-  <a href="https://jiming.blog.csdn.net" target="_blank"><img src="https://img.shields.io/badge/csdn-CSDN-red.svg" alt="CSDN"></a>
-  <a href="https://www.toutiao.com/c/user/token/MS4wLjABAAAAXazl8Yq1wrLrYs4PwJiudL4bbm-9ClLU4P-RuUZHKQ0/" target="_blank"><img src="https://img.shields.io/badge/toutiao-%E5%A4%B4%E6%9D%A1-important.svg" alt="头条"></a>
+  <a href="https://jiming.blog.csdn.net" target="_blank"><img src="https://img.shields.io/badge/csdn-CSDN-important.svg" alt="CSDN"></a>
+  <a href="https://www.toutiao.com/c/user/token/MS4wLjABAAAAXazl8Yq1wrLrYs4PwJiudL4bbm-9ClLU4P-RuUZHKQ0/" target="_blank"><img src="https://img.shields.io/badge/toutiao-%E5%A4%B4%E6%9D%A1-red.svg" alt="头条"></a>
 </p>
 
 收录了「IT无知君」CSDN博客中涉及的项目源码，新技术论证，还有许多的开发工具类，本仓库在持续更新中，敬请期待...

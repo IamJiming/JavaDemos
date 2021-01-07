@@ -1,16 +1,18 @@
 <h1 align="center">Java Demos</h1>
 <p align="center">
 <p align="center">
-  <a href="" target="_blank"><img src="https://img.shields.io/badge/weChat-微信群-blue.svg" alt="微信群"></a>
+  <a href="https://img-blog.csdnimg.cn/20201222174505289.jpg" target="_blank"><img src="https://img.shields.io/badge/weChat-微信群-blue.svg" alt="微信群"></a>
   <a href="https://img-blog.csdnimg.cn/20201222174505289.jpg" target="_blank"><img src="https://img.shields.io/badge/%E5%85%AC%E4%BC%97%E5%8F%B7-IT无知君-green.svg" alt="公众号"></a>
   <a href="https://space.bilibili.com/616743906"><img src="https://img.shields.io/badge/bilibili-哔哩哔哩-critical" alt="B站"></a>
   <a href="https://jiming.blog.csdn.net" target="_blank"><img src="https://img.shields.io/badge/csdn-CSDN-important.svg" alt="CSDN"></a>
   <a href="https://www.toutiao.com/c/user/token/MS4wLjABAAAAXazl8Yq1wrLrYs4PwJiudL4bbm-9ClLU4P-RuUZHKQ0/" target="_blank"><img src="https://img.shields.io/badge/toutiao-%E5%A4%B4%E6%9D%A1-red.svg" alt="头条"></a>
 </p>
 
-收录了「IT无知君」CSDN博客中涉及的项目源码，新技术论证，还有许多的开发工具类，本仓库在持续更新中，敬请期待...
+原创文章每周最少一篇，**最新文章**会在[【公众号】](https://img-blog.csdnimg.cn/20201222174505289.jpg)首发，**视频**会在[【B站】](https://space.bilibili.com/616743906)首发，**后续**会全部同步到我的[【CSDN】](https://jiming.blog.csdn.net)博客。不管是技术交流、建议、投稿还是絮叨，都可以随时私信我。如果觉得文章有帮助，还请您给个 **Star** ✨✨✨
+
+ ---
  
-原创文章每周最少一篇，**最新文章**会在[【公众号】](https://img-blog.csdnimg.cn/20201222174505289.jpg)首发，**视频**[【B站】](https://space.bilibili.com/616743906)首发，**后续**会同步到我的[【CSDN】](https://jiming.blog.csdn.net)博客，大家可以私信我，技术交流或提意见都可以，欢迎**Star**！
+收录了「IT无知君」CSDN博客中涉及的项目源码，新技术论证，还有许多的开发工具类，本仓库在持续更新中，敬请期待...
 
 ## 功能
 ### daily-demos 模块
@@ -66,4 +68,5 @@ Markdown 格式参考：[Github Markdown格式](https://guides.github.com/featur
 微信搜一搜「IT无知君」关注这个有意思的程序员，回复「资料」有我准备好的一线大厂面试资料，欢迎领取。
 ![我的公众号](https://img-blog.csdnimg.cn/20201222174505289.jpg)
 
+ ---
 ##### 我是「IT无知君」，学无止境，气有浩然，天涯未远，有缘再见！！

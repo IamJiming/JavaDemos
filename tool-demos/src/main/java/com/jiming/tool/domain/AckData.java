@@ -1,4 +1,4 @@
-package com.jiming.daily.domain;
+package com.jiming.tool.domain;
 
 /**
  * 功能：tcp返回的数据base类
@@ -6,6 +6,6 @@ package com.jiming.daily.domain;
  * @author Mr.tjm
  * @date 2020-5-20 11:25
  */
-public class PsbcAckData {
+public class AckData {
 
 }

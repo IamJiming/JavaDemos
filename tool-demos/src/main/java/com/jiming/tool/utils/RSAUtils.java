@@ -266,9 +266,9 @@ public class RSAUtils {
             byte[] privateKeys = Base64.decodeBase64(privateKey.getBytes());
             PKCS8EncodedKeySpec privateKeySpec = new PKCS8EncodedKeySpec(privateKeys);
             KeyFactory mykeyFactory = KeyFactory.getInstance(KEY_ALGORITHM);
-            PrivateKey psbcPrivateKey = mykeyFactory.generatePrivate(privateKeySpec);
+            PrivateKey signPrivateKey = mykeyFactory.generatePrivate(privateKeySpec);
             Signature signature = Signature.getInstance(SIGNATURE_ALGORITHM);
-            signature.initSign(psbcPrivateKey);
+            signature.initSign(signPrivateKey);
             signature.update(unsign.getBytes(encode));
             byte[] signed = signature.sign();
             return Base64.encodeBase64String(signed);

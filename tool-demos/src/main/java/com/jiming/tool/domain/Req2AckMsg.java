@@ -1,4 +1,4 @@
-package com.jiming.daily.domain;
+package com.jiming.tool.domain;
 
 /**
  * 功能：tcp请求返回的加密数据
@@ -6,7 +6,7 @@ package com.jiming.daily.domain;
  * @author Mr.tjm
  * @date 2020-5-20 11:25
  */
-public class PsbcReq2AckMsg {
+public class Req2AckMsg {
 	// 经过服务方公钥加密后的AES密钥
 	private String encryptkey;
 	// 经过AES加密的密文
@@ -35,7 +35,7 @@ public class PsbcReq2AckMsg {
 
 	@Override
 	public String toString() {
-		final StringBuilder sb = new StringBuilder("PsbcReq2AckMsg{");
+		final StringBuilder sb = new StringBuilder("Req2AckMsg{");
 		sb.append("encryptkey='").append(encryptkey).append('\'');
 		sb.append(", encryptdata='").append(encryptdata).append('\'');
 		sb.append(", signature='").append(signature).append('\'');

@@ -6,7 +6,7 @@ package com.jiming.daily.domain;
  * @author Mr.tjm
  * @date 2020-5-20 11:25
  */
-public class Q1190005AckData extends PsbcAckData {
+public class Q6250005AckData extends AckData {
 
     // 额度ID：服务方返回接口字段和数据库无法对应需要手动转化
     private String lineId;
@@ -81,7 +81,7 @@ public class Q1190005AckData extends PsbcAckData {
 
     @Override
     public String toString() {
-        final StringBuilder sb = new StringBuilder("Q1190005AckData{");
+        final StringBuilder sb = new StringBuilder("Q6250005AckData{");
         sb.append("lineId='").append(lineId).append('\'');
         sb.append(", linePeriod=").append(linePeriod);
         sb.append(", finalLineAmount=").append(finalLineAmount);

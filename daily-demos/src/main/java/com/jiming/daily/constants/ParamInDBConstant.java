@@ -11,7 +11,7 @@ public class ParamInDBConstant {
 	/**
      * 服务方 URL
      */
-    public static final String psbcConnectUrl = "http://127.0.0.1:8443/demosServer/api/YCHN001/%s/1.0.0";
+    public static final String connectUrl = "http://127.0.0.1:8443/demosServer/api/YCHN001/%s/1.0.0";
     /**
      * 服务方 公钥
      */

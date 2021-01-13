@@ -6,7 +6,7 @@ package com.jiming.tool.domain;
  * @author Mr.tjm
  * @date 2020-5-20 11:25
  */
-public class Q1190002ReqData extends PsbcReqData{
+public class Q6250002ReqData extends ReqData {
     // 预申请额度ID
     private String preAppId;
     // 客户ID
@@ -30,7 +30,7 @@ public class Q1190002ReqData extends PsbcReqData{
 
     @Override
     public String toString() {
-        final StringBuilder sb = new StringBuilder("Q1190002ReqData{");
+        final StringBuilder sb = new StringBuilder("Q6250002ReqData{");
         sb.append("preAppId='").append(preAppId).append('\'');
         sb.append(", cusId='").append(cusId).append('\'');
         sb.append('}');

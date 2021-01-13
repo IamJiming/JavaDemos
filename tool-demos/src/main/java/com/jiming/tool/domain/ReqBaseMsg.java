@@ -6,21 +6,21 @@ package com.jiming.tool.domain;
  * @author Mr.tjm
  * @date 2020-5-20 11:25
  */
-public class PsbcReqBaseMsg {
-	PsbcReqData data;
+public class ReqBaseMsg {
+	ReqData data;
 
-	PsbcReqHead head;
+	ReqHead head;
 
-	public PsbcReqData getData() {
+	public ReqData getData() {
 		return data;
 	}
-	public void setData(PsbcReqData data) {
+	public void setData(ReqData data) {
 		this.data = data;
 	}
-	public PsbcReqHead getHead() {
+	public ReqHead getHead() {
 		return head;
 	}
-	public void setHead(PsbcReqHead head) {
+	public void setHead(ReqHead head) {
 		this.head = head;
 	}
 

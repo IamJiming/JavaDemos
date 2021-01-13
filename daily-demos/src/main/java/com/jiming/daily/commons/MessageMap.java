@@ -1,9 +1,9 @@
-package com.jiming.tool.commons;
+package com.jiming.daily.commons;
 
-import com.jiming.tool.domain.Q1190002AckData;
-import com.jiming.tool.domain.Q1190002ReqData;
-import com.jiming.tool.domain.Q1190005AckData;
-import com.jiming.tool.domain.Q1190005ReqData;
+import com.jiming.daily.domain.Q6250002AckData;
+import com.jiming.daily.domain.Q6250002ReqData;
+import com.jiming.daily.domain.Q6250005AckData;
+import com.jiming.daily.domain.Q6250005ReqData;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -12,9 +12,9 @@ import java.util.Map;
  * 功能：验证请求与相应的合法性
  * 说明：这里只暂时演示2个
  * @author Mr.tjm
- * @date 2020-5-20 11:25
+ * @date 2020-5-20 11:45
  */
-public class CreMessageMap {
+public class MessageMap {
 
 	/**
 	 * 把所有的合法请求预加进来
@@ -22,8 +22,8 @@ public class CreMessageMap {
 	 */
 	public static Map<Class<?>,String> getReqMessageMap(){
 		Map<Class<?>,String> map = new HashMap<Class<?>,String>();
-		map.put(Q1190002ReqData.class,"Q1190002");
-		map.put(Q1190005ReqData.class,"Q1190005");
+		map.put(Q6250002ReqData.class,"Q6250002");
+		map.put(Q6250005ReqData.class,"Q6250005");
 		return map;
 	}
 
@@ -33,8 +33,8 @@ public class CreMessageMap {
 	 */
 	public static Map<String,Class<?>> getAckMessageMap(){
 		Map<String,Class<?>> map = new HashMap<String,Class<?>>();
-		map.put("Q1190002", Q1190002AckData.class);
-		map.put("Q1190005", Q1190005AckData.class);
+		map.put("Q6250002", Q6250002AckData.class);
+		map.put("Q6250005", Q6250005AckData.class);
 		return map;
 	}
 }

@@ -1,10 +1,9 @@
 package com.jiming.tool.domain;
 
-import com.jiming.tool.commons.CreMessageMap;
+import com.jiming.tool.commons.MessageMap;
 import com.jiming.tool.utils.JsonUtils;
 import com.alibaba.fastjson.JSONObject;
 import com.alibaba.fastjson.parser.Feature;
-import org.apache.commons.lang3.StringEscapeUtils;
 
 import java.util.ArrayList;
 import java.util.LinkedHashMap;
@@ -15,7 +14,7 @@ import java.util.LinkedHashMap;
  * @author Mr.tjm
  * @date 2020-5-20 11:25
  */
-public class PsbcAckBaseMsg {
+public class AckBaseMsg {
 	//响应码
 	private String code;
 	//响应信息
@@ -25,9 +24,9 @@ public class PsbcAckBaseMsg {
 	//交易码
 	private String tranCode;
 
-	private PsbcAckObjectMsg pageRecords;
+	private AckObjectMsg pageRecords;
 	
-	private PsbcAckData ackData = null;
+	private AckData ackData = null;
 
 	private String object;
 
@@ -71,11 +70,11 @@ public class PsbcAckBaseMsg {
 		this.object = object;
 	}
 
-	public PsbcAckObjectMsg getAckListObject() {
+	public AckObjectMsg getAckListObject() {
 		if(object==null||"".equals(object)|| pageRecords != null) {
 			return pageRecords;
 		}
-		pageRecords = new PsbcAckObjectMsg();
+		pageRecords = new AckObjectMsg();
 		JSONObject obj = JSONObject.parseObject(object, Feature.OrderedField);
 		pageRecords.setAllnum(obj.getString("allnum"));
 		pageRecords.setCount(obj.getString("count"));
@@ -83,17 +82,17 @@ public class PsbcAckBaseMsg {
 		return pageRecords;
 	}
 
-	public void setAckListObject(PsbcAckObjectMsg ackListObject) {
+	public void setAckListObject(AckObjectMsg ackListObject) {
 		this.pageRecords = ackListObject;
 	}
 
-	public PsbcAckData getAckData() {
+	public AckData getAckData() {
 		if(object==null||"".equals(object)||ackData != null) {
 			return ackData;
 		}
 		if(tranCode != null) {
 			try {
-				ackData = (PsbcAckData) JsonUtils.parseObject(object, CreMessageMap.getAckMessageMap().get(tranCode));
+				ackData = (AckData) JsonUtils.parseObject(object, MessageMap.getAckMessageMap().get(tranCode));
 			}catch(Exception e) {
 				
 			}
@@ -101,7 +100,7 @@ public class PsbcAckBaseMsg {
 		return ackData;
 	}
 
-	public void setAckData(PsbcAckData ackData) {
+	public void setAckData(AckData ackData) {
 		this.ackData = ackData;
 	}
 
@@ -114,14 +113,6 @@ public class PsbcAckBaseMsg {
 		content.append(message);
 		content.append(flowno);
 		content.append(tranCode);
-
-		if("Q1190023".equals(tranCode)) {
-			
-			content.append(this.getObject());
-		}
-		else {
-			content.append(StringEscapeUtils.unescapeJava(this.getObject()));
-		}
 		return content.toString();
 	}
 }

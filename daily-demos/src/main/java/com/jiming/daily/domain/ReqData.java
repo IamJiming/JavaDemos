@@ -6,6 +6,6 @@ package com.jiming.daily.domain;
  * @author Mr.tjm
  * @date 2020-5-20 11:25
  */
-public class PsbcReqData {
+public class ReqData {
 
 }

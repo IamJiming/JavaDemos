@@ -16,7 +16,7 @@ public class ParamInDB {
     private static final Logger logger = LoggerFactory.getLogger(ParamInDB.class);
 
     // 服务方URL
-    private String psbcConnectUrl;
+    private String connectUrl;
 
     /**
      * “服务方公钥”与“合作方私钥”是一对
@@ -34,8 +34,8 @@ public class ParamInDB {
     // 服务方私钥
     private String workPublicKey;
 
-    public String getPsbcConnectUrl() {
-        return this.getParaMapByKey(ParamInDBConstant.psbcConnectUrl);
+    public String getConnectUrl() {
+        return this.getParaMapByKey(ParamInDBConstant.connectUrl);
     }
 
     public String getServicePublicKey() {

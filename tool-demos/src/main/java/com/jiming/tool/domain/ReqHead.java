@@ -1,4 +1,4 @@
-package com.jiming.daily.domain;
+package com.jiming.tool.domain;
 
 /**
  * 功能：tcp请求头
@@ -6,7 +6,7 @@ package com.jiming.daily.domain;
  * @author Mr.tjm
  * @date 2020-5-20 11:25
  */
-public class PsbcReqHead {
+public class ReqHead {
 	// 交易日期 20180508
 	private String senderDate;
 	// 交易流水号 7位系统代字+10位顺序号(一天内不允许重复)
@@ -60,7 +60,7 @@ public class PsbcReqHead {
 
 	@Override
 	public String toString() {
-		final StringBuilder sb = new StringBuilder("PsbcReqHead{");
+		final StringBuilder sb = new StringBuilder("ReqHead{");
 		sb.append("senderDate='").append(senderDate).append('\'');
 		sb.append(", flowno='").append(flowno).append('\'');
 		sb.append(", senderTime='").append(senderTime).append('\'');

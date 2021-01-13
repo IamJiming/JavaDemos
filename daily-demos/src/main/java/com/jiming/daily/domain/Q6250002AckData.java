@@ -6,7 +6,7 @@ package com.jiming.daily.domain;
  * @author Mr.tjm
  * @date 2020-5-20 11:25
  */
-public class Q1190002AckData extends PsbcAckData{
+public class Q6250002AckData extends AckData {
 
     private String cusId;
 
@@ -90,7 +90,7 @@ public class Q1190002AckData extends PsbcAckData{
 
     @Override
     public String toString() {
-        final StringBuilder sb = new StringBuilder("Q1190002AckData{");
+        final StringBuilder sb = new StringBuilder("Q6250002AckData{");
         sb.append("cusId='").append(cusId).append('\'');
         sb.append(", cusName='").append(cusName).append('\'');
         sb.append(", certificateCode='").append(certificateCode).append('\'');

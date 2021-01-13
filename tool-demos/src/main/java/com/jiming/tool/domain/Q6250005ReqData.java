@@ -1,4 +1,4 @@
-package com.jiming.daily.domain;
+package com.jiming.tool.domain;
 
 /**
  * 功能：模拟的请求数据bean
@@ -6,7 +6,7 @@ package com.jiming.daily.domain;
  * @author Mr.tjm
  * @date 2020-5-20 11:25
  */
-public class Q1190005ReqData extends PsbcReqData{
+public class Q6250005ReqData extends ReqData {
     // 额度ID
     private String lineId;
     // 额度订单号：合作方生成，7位系统代字+8位日期+02+8位顺序号
@@ -30,7 +30,7 @@ public class Q1190005ReqData extends PsbcReqData{
 
     @Override
     public String toString() {
-        final StringBuilder sb = new StringBuilder("Q1190005ReqData{");
+        final StringBuilder sb = new StringBuilder("Q6250005ReqData{");
         sb.append("lineId='").append(lineId).append('\'');
         sb.append(", lineAppId='").append(lineAppId).append('\'');
         sb.append('}');

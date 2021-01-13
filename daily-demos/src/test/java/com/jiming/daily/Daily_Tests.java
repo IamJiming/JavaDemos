@@ -5,6 +5,9 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.boot.test.context.SpringBootTest;
 
+import java.text.SimpleDateFormat;
+import java.util.Calendar;
+
 /**
  * 日常测试类
  *
@@ -15,6 +18,9 @@ import org.springframework.boot.test.context.SpringBootTest;
 public class Daily_Tests {
     private static final Logger logger = LoggerFactory.getLogger(Daily_Tests.class);
 
+    // 时间格式
+    private static final SimpleDateFormat simple_1 = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+
     @Test
     void simple_test() {
         logger.info("〓 〓 〓 〓 〓 〓 〓 〓 〓 〓 BEGIN 〓 〓 〓 〓 〓 〓 〓 〓 〓 〓 ");
@@ -24,4 +30,16 @@ public class Daily_Tests {
         logger.info("〓 〓 〓 〓 〓 〓 〓 〓 〓 〓  END  〓 〓 〓 〓 〓 〓 〓 〓 〓 〓 ");
     }
 
+    @Test
+    void time_test() {
+        logger.info("〓 〓 〓 〓 〓 〓 〓 〓 〓 〓 BEGIN 〓 〓 〓 〓 〓 〓 〓 〓 〓 〓 ");
+
+        String timestamp ="1580313600000";
+        Calendar calendar = Calendar.getInstance();
+        calendar.setTimeInMillis(Long.valueOf(timestamp));
+        String now = simple_1.format(calendar.getTimeInMillis());
+        logger.info("now = " + now);
+
+        logger.info("〓 〓 〓 〓 〓 〓 〓 〓 〓 〓  END  〓 〓 〓 〓 〓 〓 〓 〓 〓 〓 ");
+    }
 }

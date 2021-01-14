@@ -46,6 +46,7 @@ public class Daily_Tests {
 
         logger.info("〓 〓 〓 〓 〓 〓 〓 〓 〓 〓  END  〓 〓 〓 〓 〓 〓 〓 〓 〓 〓 ");
     }
+<<<<<<< HEAD
 
     /**
      * GitHub Desktop 上使用“版本回滚”功能
@@ -57,4 +58,6 @@ public class Daily_Tests {
     void Revert_test() {
         // 测试代码：测试 Git 版本回滚
     }
+=======
+>>>>>>> parent of f7a880b... 1. 这是测试  git revert 功能的代码，回滚到此版本
 }

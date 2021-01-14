@@ -47,14 +47,4 @@ public class Daily_Tests {
         logger.info("〓 〓 〓 〓 〓 〓 〓 〓 〓 〓  END  〓 〓 〓 〓 〓 〓 〓 〓 〓 〓 ");
     }
 
-    /**
-     * GitHub Desktop 上使用“版本回滚”功能
-     * 解释：
-     *      Github 网页界面上没有 git revert 功能（如果你找到了，欢迎指正）;
-     *      相比使用命令行，我更喜欢桌面化的操作，简洁方便不用记代码，还能推动科技进步。
-     */
-    @Test
-    void Revert_test() {
-        // 测试代码：测试 Git 版本回滚功能
-    }
 }

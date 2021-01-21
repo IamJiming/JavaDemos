@@ -13,5 +13,6 @@
     <modules>
         <module>daily-demos</module>
         <module>tool-demos</module>
+        <module>daily-mbg</module>
     </modules>
 </project>

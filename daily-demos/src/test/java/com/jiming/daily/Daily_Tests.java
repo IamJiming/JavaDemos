@@ -5,8 +5,10 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.boot.test.context.SpringBootTest;
 
+import java.sql.*;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
+import java.util.concurrent.atomic.AtomicInteger;
 
 /**
  * 日常测试类
@@ -20,6 +22,8 @@ public class Daily_Tests {
 
     // 时间格式
     private static final SimpleDateFormat simple_1 = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+
+    private  static   final AtomicInteger cas = new AtomicInteger(1);
 
     @Test
     void simple_test() {
@@ -41,6 +45,45 @@ public class Daily_Tests {
         logger.info("now = " + now);
 
         logger.info("〓 〓 〓 〓 〓 〓 〓 〓 〓 〓  END  〓 〓 〓 〓 〓 〓 〓 〓 〓 〓 ");
+    }
+
+    @Test
+    void jdbc_test() {
+        Connection conn = null;
+        Statement stmt = null;
+        ResultSet rs = null;
+        try{
+            // 1.注册 JDBC 驱动
+            Class.forName("com.mysql.jdbc.Driver");
+
+            // 2.打开链接
+            System.out.println("连接数据库...");
+            conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/my_db","root","root");
+
+            // 3.执行查询
+            stmt = conn.createStatement();
+            String sql = "SELECT id, name, url FROM websites";
+            rs = stmt.executeQuery(sql);
+            // 4.输出结果
+            System.out.print("查询结果：" + rs);
+        }catch(SQLException se){
+            se.printStackTrace();
+        }catch(Exception e){
+            e.printStackTrace();
+        }finally{
+            // 关闭资源
+            try {
+                rs.close();
+                stmt.close();
+                conn.close();
+            } catch (SQLException e) {
+                e.printStackTrace();
+            }
+        }
+    }
+
+    @Test
+    void lock_test() {
     }
 
 }

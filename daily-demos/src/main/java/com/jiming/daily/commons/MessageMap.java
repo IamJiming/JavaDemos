@@ -1,9 +1,9 @@
 package com.jiming.daily.commons;
 
-import com.jiming.daily.domain.Q6250002AckData;
-import com.jiming.daily.domain.Q6250002ReqData;
-import com.jiming.daily.domain.Q6250005AckData;
-import com.jiming.daily.domain.Q6250005ReqData;
+import com.jiming.daily.business.domain.Q6250002AckData;
+import com.jiming.daily.business.domain.Q6250002ReqData;
+import com.jiming.daily.business.domain.Q6250005AckData;
+import com.jiming.daily.business.domain.Q6250005ReqData;
 
 import java.util.HashMap;
 import java.util.Map;

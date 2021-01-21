@@ -1,4 +1,4 @@
-package com.jiming.daily.domain;
+package com.jiming.daily.business.domain;
 
 import com.jiming.daily.commons.MessageMap;
 import com.jiming.daily.utils.JsonUtils;

@@ -1,4 +1,4 @@
-package com.jiming.daily.domain;
+package com.jiming.daily.business.domain;
 
 /**
  * 功能：模拟的请求数据bean

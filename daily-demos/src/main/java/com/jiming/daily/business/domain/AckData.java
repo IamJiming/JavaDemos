@@ -1,4 +1,4 @@
-package com.jiming.daily.domain;
+package com.jiming.daily.business.domain;
 
 /**
  * 功能：tcp返回的数据base类

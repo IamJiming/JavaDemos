@@ -1,7 +1,6 @@
 package com.jiming.daily.commons;
 
 import com.jiming.daily.constants.Global;
-import com.jiming.daily.domain.*;
 import com.jiming.daily.exception.service.ServiceException;
 import com.jiming.daily.utils.*;
 import com.alibaba.fastjson.JSON;

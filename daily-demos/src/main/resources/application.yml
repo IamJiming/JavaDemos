@@ -2,7 +2,7 @@ spring:
   application:
     name: demos
   profiles:
-    active: pro
+    active: dev
 
 server:
   port: 8090

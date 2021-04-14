@@ -2,7 +2,6 @@ package com.jiming.daily.business.service.impl;
 
 import com.jiming.daily.business.service.ITransactionTestService;
 import org.springframework.stereotype.Service;
-import org.springframework.transaction.annotation.Transactional;
 
 /**
  * 功能：验证mysql的事务特性
@@ -14,7 +13,7 @@ import org.springframework.transaction.annotation.Transactional;
 public class TransactionTestService implements ITransactionTestService {
 
     @Override
-    @Transactional
+//    @Transactional
     public boolean ACID_test(String userId) {
         return false;
     }

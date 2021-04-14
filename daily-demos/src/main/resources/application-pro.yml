@@ -5,7 +5,7 @@ spring:
     url: jdbc:mysql://localhost/slife?useUnicode=true&characterEncoding=utf8&useSSL=false
     username: root
     password: root
-    type: com.alibaba.druid.pool.DruidDataSource
+#    type: com.alibaba.druid.pool.DruidDataSource
     druid:
       validationQuery: SELECT 1
       initialSize: 10

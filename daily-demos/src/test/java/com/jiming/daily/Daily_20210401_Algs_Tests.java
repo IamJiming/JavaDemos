@@ -1,14 +1,11 @@
 package com.jiming.daily;
 
 import com.alibaba.fastjson.JSON;
-import com.sun.org.apache.xerces.internal.util.SynchronizedSymbolTable;
 import org.junit.jupiter.api.Test;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.boot.test.context.SpringBootTest;
 
-import javax.persistence.criteria.CriteriaBuilder;
-import java.lang.reflect.Array;
 import java.text.SimpleDateFormat;
 import java.util.*;
 import java.util.concurrent.atomic.AtomicInteger;
@@ -67,44 +64,13 @@ public class Daily_20210401_Algs_Tests {
     void algs_test_2() {
         // E = 1;F = -1。求最大值
         String str = "EFEEF";
-        int i = str.hashCode();
         int max=0,sum=0;
         for (int j=0;j<str.length();j++) {
             int index = str.charAt(j) == 'E' ? 1 : -1;
             sum = Math.max(sum + index, index);
             max = Math.max(max, sum);
         }
-        List list = new ArrayList();
-        Iterator it = list.iterator();
-        while (it.hasNext()) {
-            it.remove();
-        }
         System.out.println("max = " + max);
-    }
-
-    /**
-     * 1 - 改
-     */
-    @Test
-    void algs_test_3() {
-        TreeMap map = new TreeMap(new Comparator<String>() {
-            // 降序：star > end -> false
-            @Override
-            public int compare(String o1, String o2) {
-                int star = Integer.parseInt(o1);
-                int end = Integer.parseInt(o2);
-                if (star > end) {
-                    return -1;
-                } else if (star < end){
-                    return 1;
-                }
-                return 0;
-            }
-        });
-        map.put("1","1");
-        map.put("3","3");
-        map.put("2","2");
-        System.out.println("max = " + JSON.toJSONString(map));
     }
 
     /**
@@ -186,6 +152,148 @@ public class Daily_20210401_Algs_Tests {
         System.out.println("方法3 num3 = " + JSON.toJSONString(num3));
     }
 
+    /**
+     * 不改变数组顺序，求连续数组元素的最大和，数组元素有负数有正数 # # # # # # # # # # ! ! ! ! ! ! ! ! ! !
+     *
+     * 动态规划的思想
+     */
+    @Test
+    void algs_test_7() {
+        int[] arr = {1,-2,-1,3,-4,2,-1,8};
+        // 保存每组的和，保存最大和
+        int sum = arr[0],max = arr[0];
+        for (int i = 1; i < arr.length; i++) {
+            sum = Math.max(arr[i], sum + arr[i]);
+            max =  Math.max(sum, max);
+        }
+        System.out.println("max = " + JSON.toJSONString(max));
+    }
 
+    /**
+     * 两个数组找出相同的元素
+     *
+     * 用map，和两层for循环暴力对比，我在写一种【归并思想】
+     */
+    @Test
+    void algs_test_8() {
+        int[] arr1 = {1,2,3,4,5,6};
+        int[] arr2 = {2,5,8};
+        List list = new ArrayList();
+        Arrays.sort(arr1);
+        Arrays.sort(arr2);
+        int i = 0,j = 0;
+        while(i < arr1.length && j < arr2.length){
+            if (arr1[i] == arr2[j]) {
+                list.add(arr1[i]);
+                i++;
+                j++;
+            } else if (arr1[i] > arr2[j]){
+                j++;
+            } else {
+                i++;
+            }
+        }
+        System.out.println("list = " + JSON.toJSONString(list));
+    }
+
+    /**
+     * 聪明的编辑：微信公众号收录
+     *
+     * 使用 正则表达式 里的【反向引用】
+     */
+    @Test
+    void algs_test_9() {
+        String str = "helloo";
+        str = str.replaceAll("(.)\\1(.)\\2(.)\\3", "$1$1$2$3$3");
+        str = str.replaceAll("(.)\\1(.)\\2", "$1$1$2");
+        System.out.println("str = " + JSON.toJSONString(str));
+    }
+
+    /**
+     * 大小写字母差值
+     * 小美希望文章中的大小写字母数量相同，
+     * 所以她想让小团帮她把某些小写字母改成对应的大写字母，或者把某些大写字母改成对应的小写字母，使得文章变得优雅。
+     * 小美给出的文章一定是由偶数长度组成的，她想知道最少修改多少个字母，才能让文章优雅。
+     */
+    @Test
+    void algs_test_10() {
+        String str = "AAACCb";
+        int index_a = Integer.valueOf('a');
+        int len = str.length();
+        int lower = 0;
+        for (int i = 0; i < len; i++) {
+            if (Integer.valueOf(str.charAt(i)) >= index_a) {
+                lower ++;
+            }else {
+                lower --;
+            }
+        }
+        int result = lower/2;
+        System.out.println("max = " + JSON.toJSONString(result >= 0 ? result : -result));
+    }
+
+    /**
+     * 求两个数组的重合部分和不重合部分
+     *
+     * A国和B国正在打仗，他们的目的是n块土地。现在，A国和B国暂时休战，为了能合理分配这一些土地，AB国开始协商。
+     * A国希望得到这n块土地中的p块土地，B国希望得到这n块土地中的q块土地。每个国家都将自己希望得到的土地编号告诉了小团和小美——两位战争调和人。
+     * 你需要帮小团和小美计算，有多少块土地是只有A国想要的，有多少块土地是只有B国想要的，有多少块土地是两个国家都想要的。
+     */
+    @Test
+    void algs_test_11() {
+        int[] result = new int[3];
+
+        int num = 10;
+        int[] country_a = {0,1,2,3,4,5};
+        int[] country_b = {4,5,6,7,8,9};
+
+        Arrays.sort(country_a);
+        Arrays.sort(country_b);
+
+        int i=0,j=0,index=0;
+        while (i < country_a.length && j < country_b.length) {
+            if (country_a[i] > country_b[j]) {
+                j++;
+            } else if (country_a[i] < country_b[j]) {
+                i++;
+            } else {
+                i++;
+                j++;
+                index++;
+            }
+        }
+
+        result[0] = country_a.length - index;  // a
+        result[1] = country_b.length - index;  // b
+        result[2] = index;  // 重合
+        System.out.println("result = " + JSON.toJSONString(result));
+    }
+
+    /**
+     * 小包从36张牌中抽取了13张牌，他想知道在剩下的23张牌中，再取一张牌，取到哪几种数字牌可以和牌。
+     *
+     * 4张牌中有2张相同数字的牌，称为雀头。
+     * 除去上述2张牌，剩下12张牌可以组成4个顺子或刻子(一样的牌)。
+     */
+    @Test
+    void algs_test_12() {
+        String str = "1112225556669";
+        Map<Character, Integer> map = new HashMap<>();
+        for (int i = 0; i < str.length(); i++) {
+            Character ch = str.charAt(i);
+
+            if (map.get(ch) == null) {
+                map.put(str.charAt(i), 1);
+            } else if (map.get(ch) == 2) {
+                map.remove(ch);
+            } else {
+                map.put(str.charAt(i), map.get(ch) + 1);
+            }
+        }
+        for (Character c : map.keySet()) {
+            System.out.println("str = " + JSON.toJSONString(c));
+        }
+        System.out.println("str = " + JSON.toJSONString("END"));
+    }
 
 }

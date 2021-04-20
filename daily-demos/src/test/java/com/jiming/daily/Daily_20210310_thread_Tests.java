@@ -118,15 +118,6 @@ public class Daily_20210310_thread_Tests {
         System.out.println("Semaphore 执行完成！！");
     }
 
-    @Test
-    void thread_test_5() {
-        T t = new T();
-        System.out.println(ClassLa);
-    }
-
-    class T {
-
-    }
     // ———————————————————— create thread ————————————————————
 
 

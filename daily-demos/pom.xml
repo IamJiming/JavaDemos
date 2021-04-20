@@ -120,6 +120,14 @@
             <artifactId>aliyun-sdk-oss</artifactId>
             <version>3.8.0</version>
         </dependency>
+
+        <!-- 测试自定义的starter -->
+        <dependency>
+            <groupId>com.jiming.demo</groupId>
+            <artifactId>jiming-spring-boot-starter</artifactId>
+            <version>1.0</version>
+        </dependency>
+
     </dependencies>
 
     <build>

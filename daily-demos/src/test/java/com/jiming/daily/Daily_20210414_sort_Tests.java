@@ -131,4 +131,44 @@ public class Daily_20210414_sort_Tests {
         this.quicksort(arr,mid+1,right);
     }
 */
+
+    // 一直对比，一直交换
+    @Test
+    void algs_test_1() {
+        int[] arr = {1, 2, 3, 5, 8, 11, 10, 6, 9, 7, 54, 23, 27, 17, 22, 13};
+        int len = arr.length;
+        for (int i = 0; i < len-1; i++) {
+            for (int j = i; j < len-1; j++) {
+                if (arr[j] >  arr[j+1]){
+                    int temp = arr[j];
+                    arr[j] = arr[j+1];
+                    arr[j+1] = temp;
+                }
+            }
+        }
+        System.out.println("冒泡排序 arr = " + JSON.toJSONString(arr));
+    }
+
+    // "选择排序：每次选择一个最小的值
+    @Test
+    void algs_test_2() {
+        int[] arr = {1, 2, 3, 5, 8, 11, 10, 6, 9, 7, 54, 23, 27, 17, 22, 13};
+        int len = arr.length;
+
+        for (int i = 0; i < len; i++) {
+            int min = arr[i];
+            int index = i;
+            for (int j = i+1; j < len; j++) {
+                if (arr[j] < min) {
+                    index = j;
+                    min = arr[j];
+                }
+            }
+            if (i != index) {
+                arr[index] = arr[i];
+                arr[i] = min;
+            }
+        }
+        System.out.println("选择排序 arr = " + JSON.toJSONString(arr));
+    }
 }

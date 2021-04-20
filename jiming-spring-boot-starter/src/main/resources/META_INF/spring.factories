@@ -1,0 +1,4 @@
+# Default TestExecutionListeners for the Spring TestContext Framework
+#
+org.springframework.boot.autoconfigure.EnableAutoconfiguration = HelloAutoConfiguration
+

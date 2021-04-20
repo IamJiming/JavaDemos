@@ -13,6 +13,7 @@
     <modules>
         <module>daily-demos</module>
         <module>tool-demos</module>
+        <module>jiming-spring-boot-starter</module>
         <!--<module>daily-mbg</module>-->
     </modules>
 </project>

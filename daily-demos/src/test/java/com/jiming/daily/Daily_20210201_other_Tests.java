@@ -17,8 +17,8 @@ import java.util.concurrent.atomic.AtomicInteger;
  * @date 2021-1-6 17:25
  */
 @SpringBootTest
-public class Daily_Tests {
-    private static final Logger logger = LoggerFactory.getLogger(Daily_Tests.class);
+public class Daily_20210201_other_Tests {
+    private static final Logger logger = LoggerFactory.getLogger(Daily_20210201_other_Tests.class);
 
     // 时间格式
     private static final SimpleDateFormat simple_1 = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");

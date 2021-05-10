@@ -6,6 +6,7 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.boot.test.context.SpringBootTest;
 
+import java.lang.ref.SoftReference;
 import java.text.SimpleDateFormat;
 import java.util.*;
 import java.util.concurrent.atomic.AtomicInteger;
@@ -295,5 +296,69 @@ public class Daily_20210401_Algs_Tests {
         }
         System.out.println("str = " + JSON.toJSONString("END"));
     }
+
+    /**
+     * 斐波那契数列
+     *
+     *一只青蛙一次可以跳上 1 级台阶，也可以跳上 2 级。
+     * 求该青蛙跳上一 个 n 级的台阶总共有多少种跳法。
+     */
+    @Test
+    void algs_test_13() {
+       int n = 5;
+       if (n < 3){
+           System.out.println("result = " + JSON.toJSONString(3));
+           return;
+       }
+       int one = 1;
+       int two = 2;
+       int result = 0;
+       for (int i = 3;i <= n;i++) {
+           result = one + two;
+           one = two;
+           two = result;
+       }
+        System.out.println("result = " + JSON.toJSONString(result));
+    }
+
+    /**
+     * 2^(n-1)
+     *
+     * 一只青蛙一次可以跳上 1 级台阶，也可以跳上 2 级……它也可以跳上 n 级。
+     * 求该青蛙跳上一个 n 级的台阶总共有多少种跳法。
+     */
+    @Test
+    void algs_test_14() {
+        int target = 3;
+        int result = (int) Math.pow(2,target-1);
+        System.out.println("result = " + JSON.toJSONString(result));
+    }
+
+    /**
+     * 判断括号是否对称
+     *
+     */
+    @Test
+    void algs_test_15() {
+        String str = "{[()]}";
+        List list = new ArrayList();
+        list.add(1);
+        list.add(2);
+        Collections.sort(list);
+        System.out.println("list = " + JSON.toJSONString(list));
+        List list1 = new ArrayList();
+        list1.add("A");
+        list1.add("B");
+        list.sort(new Comparator() {
+            @Override
+            public int compare(Object o1, Object o2) {
+                return 0;
+            }
+        });
+        SoftReference<String> softReference = new SoftReference<String>("abc");
+        Map map = new Hashtable();
+        System.out.println("list1 = " + JSON.toJSONString(list1));
+    }
+
 
 }

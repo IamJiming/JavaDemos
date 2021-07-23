@@ -305,19 +305,19 @@ public class Daily_20210401_Algs_Tests {
      */
     @Test
     void algs_test_13() {
-       int n = 5;
-       if (n < 3){
-           System.out.println("result = " + JSON.toJSONString(3));
-           return;
-       }
-       int one = 1;
-       int two = 2;
-       int result = 0;
-       for (int i = 3;i <= n;i++) {
-           result = one + two;
-           one = two;
-           two = result;
-       }
+        int n = 5;
+        if (n < 3){
+            System.out.println("result = " + JSON.toJSONString(3));
+            return;
+        }
+        int one = 1;
+        int two = 2;
+        int result = 0;
+        for (int i = 3;i <= n;i++) {
+            result = one + two;
+            one = two;
+            two = result;
+        }
         System.out.println("result = " + JSON.toJSONString(result));
     }
 
@@ -360,5 +360,42 @@ public class Daily_20210401_Algs_Tests {
         System.out.println("list1 = " + JSON.toJSONString(list1));
     }
 
+    /**
+     * 反转 + 去重
+     */
+    // 方法1：使用List
+    @Test
+    void test_32_1() {
+        int[] num = {3,2,2,1};
+        List list = new ArrayList();
+        for (int i = num.length-1; i >= 0; i--) {
+            if (list.size() > 0 && num[i] == num[i+1]) {
+                continue;
+            }
+            list.add(num[i]);
+        }
+        System.out.println("list = " + JSON.toJSONString(list));
+    }
+    // 方法2：使用栈
+    @Test
+    void test_32() {
+        int[] num = {3,2,2,1};
+        //放进栈
+        Stack<Integer> stack = new Stack<>();
+        for (int i = 0; i < num.length; i++) {
+            if (!stack.empty() && stack.peek() == num[i]) {
+                continue;
+            }
+            stack.push(num[i]);
+        }
+        // 遍历栈
+        List list = new ArrayList();
+        while(!stack.empty()){
+            list.add(stack.pop());
+        }
+
+        // 输出list。list就是结果
+        System.out.println("data："+ JSON.toJSONString(list));
+    }
 
 }

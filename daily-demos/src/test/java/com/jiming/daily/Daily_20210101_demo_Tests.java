@@ -1,11 +1,14 @@
 package com.jiming.daily;
 
+import com.sun.org.apache.xpath.internal.operations.Bool;
 import javafx.scene.CacheHint;
 import org.junit.jupiter.api.Test;
 import org.mockito.internal.matchers.CompareTo;
 
 import java.lang.reflect.Array;
 import java.util.*;
+import java.util.concurrent.ArrayBlockingQueue;
+import java.util.concurrent.PriorityBlockingQueue;
 
 public class Daily_20210101_demo_Tests {
     @Test
@@ -490,12 +493,49 @@ public class Daily_20210101_demo_Tests {
                     --R;
                 }else if(temp<0){
                     ++L;
-                    }else{
-                       -- R;
-                    }
+                }else{
+                    -- R;
                 }
             }
+        }
         System.out.println(lists);
+    }
+
+    @Test
+    void test26() {
+        Map<Integer,String> map = new HashMap<>();
+        map.put(10,"10");
+        String value1 = map.get(10);
+        System.out.println("value1 = " + value1);
+        String value2 = map.get(10L);
+        System.out.println("value2 = " + value2);
+        String value3 = map.get((int)10L);
+        System.out.println("value3 = " + value3);
+
+
+        Long l = 1L;
+        Integer i = 1;
+        System.out.println("value_l = " + l.hashCode());
+        System.out.println("value_i = " + i.hashCode());
+        System.out.println("value_l1 = " + ((16-1) & l.hashCode()));
+        System.out.println("value_i1 = " + ((16-1) & i.hashCode()));
+
+        ArrayBlockingQueue<Integer> queue = new ArrayBlockingQueue(0);
+        try {
+            queue.put(1);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+        queue.add(2);
+        queue.offer(3);
+        queue.poll();
+        try {
+            queue.take();
+        } catch (InterruptedException e) {
+            e.printStackTrace();
         }
 
+        PriorityBlockingQueue pri = new PriorityBlockingQueue(0);
+
+    }
 }

@@ -122,7 +122,7 @@ public class Daily_20210310_thread_Tests {
 
 
     @Test
-    void thread_test_4() throws InterruptedException  {
+    void thread_test_4() throws InterruptedException,ExecutionException  {
         new TaskThread().start();
         new TaskThread().start();
         new TaskThread().start();
@@ -139,6 +139,26 @@ public class Daily_20210310_thread_Tests {
         FutureTask<Integer> ft1 = new FutureTask<>(ctt1);
         Thread th11 = new Thread(ft1, "Call线程1");
         th11.start();
+
+
+
+
+        FutureTask<Integer> ft = new FutureTask<>(new Callable<Integer>() {
+            @Override
+            public Integer call() throws Exception {
+                // 方法体
+                return 5;
+            }
+        });
+        Thread thread = new Thread(ft, "我是带返回值的callable线程！");
+        thread.start();
+
+        // isDone() 查看线程是否执行结束
+        boolean flag = ft.isDone();
+        // get()    获取现成的返回值
+        int num = ft.get();
+
+
 
         try {
             int i = ft1.get();
